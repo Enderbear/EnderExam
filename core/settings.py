@@ -75,11 +75,14 @@ WSGI_APPLICATION = 'enderexam.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'exam',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',  # 或者你的MySQL服务器地址
+        'PORT': '3306',       # MySQL服务器的端口，默认为3306
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
