@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>上传页面</title>
+    <style>
+        .sidebar {
+            width: 150px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            background-color: #f0f0f0;
+            padding: 15px;
+        }
+        .sidebar a {
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: black;
+        }
+        .sidebar a:hover {
+            background-color: #ddd;
+        }
+        .content {
+            margin-left: 170px; /* 给侧边栏留出空间 */
+            padding: 20px;
+        }
+        .content h2 {
+            margin-bottom: 20px;
+        }
+        .content .form-group {
+            margin-bottom: 20px;
+        }
+        .content .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .content .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h1>星考宝典</h1>
+        <!-- 侧边栏按钮 -->
+        <a href="{% url 'home' %}"><button>主页</button></a>
+        <a href="{% url 'exam' %}"><button>开始考试</button></a>
+        <a href="{% url 'upload' %}"><button>上传试题</button></a>
+        <a href="{% url 'data' %}"><button>查看题库</button></a>
+    </div>
+    <div class="content">
+        <h2>主题上传</h2>
+        <h1>上传失败！</h1>
+    </div>
+
+</body>
+</html>

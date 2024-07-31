@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>星考宝典</title>
+    <style>
+        .sidebar {
+            width: 150px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            background-color: #f0f0f0;
+            padding: 15px;
+        }
+        .sidebar a {
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: black;
+        }
+        .sidebar a:hover {
+            background-color: #ddd;
+        }
+        .content {
+            margin-left: 170px; /* 给侧边栏留出空间 */
+            padding: 20px;
+        }
+        .logout-container {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h1>星考宝典</h1>
+        <!-- 侧边栏按钮 -->
+        <a href="{% url 'home' %}"><button>主页</button></a>
+        <a href="{% url 'exam' %}"><button>开始考试</button></a>
+        <a href="{% url 'upload' %}"><button>上传试题</button></a>
+        <a href="{% url 'upload' %}"><button>查看题库</button></a>
+    </div>
+    
+    <div class="content">
+        <h2>公告</h2>
+        <!-- 页面内容 -->
+    </div>
+
+    <!-- 登出按钮容器 -->
+    <div class="logout-container">
+        <!-- 检查用户是否已登录 -->
+        {% if user.is_authenticated %}
+            <!-- 登出按钮 -->
+            <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">登出</button>
+            </form>
+        {% endif %}
+    </div>
+</body>
+</html>
